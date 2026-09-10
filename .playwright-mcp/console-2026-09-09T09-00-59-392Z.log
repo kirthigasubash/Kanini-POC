@@ -1,0 +1,4 @@
+[    2203ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ https://dev3.openmrs.org/openmrs/spa/0f1f3081096a380c.js:0
+[    3057ms] [INFO] [@carbon/feature-flags] `enable-v12-dynamic-floating-styles` is available but not enabled.
+Enable dynamic setting of floating styles for components like Popover, Tooltip, etc.
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/d8457e983e5fdacb.js:0
