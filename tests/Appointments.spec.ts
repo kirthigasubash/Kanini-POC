@@ -14,6 +14,7 @@ test.describe('@Core end-user workflows', () => {
       service: 'General Medicine service',
       durationMinutes: '30',
     };
+    //const
     const appointmentDateTime = new Date(Date.now() + (240 + Math.floor(Math.random() * 120)) * 60 * 1000);
     const appointmentHour = appointmentDateTime.getHours();
     const appointmentTime = `${String(appointmentHour % 12 || 12).padStart(2, '0')}:${String(appointmentDateTime.getMinutes()).padStart(2, '0')}`;
