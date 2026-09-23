@@ -24,20 +24,20 @@ export class CreatePatientPage {
     this.registerButton = page.getByRole('button', { name: 'Register patient' });
     this.firstNameInput = page.locator('input[name="givenName"]');
     this.familyNameInput = page.locator('input[name="familyName"]');
-    this.birthDateInput = page.locator('input[name="birthdate"]').first();
+    this.birthDateInput = page.locator('input[type="date"][name="birthdate"]');
     this.basicInfoHeading = page.getByRole('heading', { name: /Basic Info/ });
     this.contactDetailsHeading = page.getByRole('heading', { name: /Contact Details/ });
     this.relationshipsHeading = page.getByRole('heading', { name: /Relationships/ });
   }
 
   sexOption(sex: PatientDemographics['sex']): Locator {
-    return this.page.getByRole('radio', { name: sex });
+    return this.page.locator(`label[for="gender-option-${sex.toLowerCase()}"]`);
   }
 
   async enterDemographics(patient: PatientDemographics): Promise<void> {
     await this.firstNameInput.fill(patient.firstName);
     await this.familyNameInput.fill(patient.familyName);
-    await this.sexOption(patient.sex).check();
+    await this.sexOption(patient.sex).click();
     await this.birthDateInput.fill(patient.birthDate);
 
     if (patient.address) {

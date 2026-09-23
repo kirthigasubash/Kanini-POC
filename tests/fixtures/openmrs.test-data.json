@@ -1,0 +1,44 @@
+{
+  "authentication": {
+    "validUser": {
+      "username": "admin",
+      "password": "Admin123"
+    },
+    "invalidUser": {
+      "username": "invalid-user",
+      "password": "invalid-password"
+    },
+    "expectedLocation": "Outpatient Clinic"
+  },
+  "patients": {
+    "seeded": {
+      "name": "Kenneth Carter",
+      "identifier": "10001C6"
+    },
+    "registration": {
+      "firstNamePrefix": "PW",
+      "familyName": "Registration",
+      "sex": "Other",
+      "birthDate": "1990-01-01",
+      "address": "Playwright Test Address",
+      "phoneNumber": "5550100"
+    },
+    "missingSearchPrefix": "NoSuchPatient"
+  },
+  "appointments": {
+    "filterPatient": "Kenneth Carter",
+    "clearFilter": "",
+    "checkInPatient": "David Williams"
+  },
+  "vitals": {
+    "visitType": "OPD Visit",
+    "temperature": "36.8",
+    "systolicBloodPressure": "120",
+    "diastolicBloodPressure": "80",
+    "pulse": "72",
+    "respiratoryRate": "16",
+    "oxygenSaturation": "98",
+    "weight": "70",
+    "height": "170"
+  }
+}

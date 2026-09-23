@@ -1,0 +1,19 @@
+- generic [ref=e3]:
+  - button [ref=e48] [cursor=pointer]
+  - button "Toggle Implementer Tools" [ref=e54] [cursor=pointer]
+  - generic [ref=e59]:
+    - generic [ref=e60]:
+      - paragraph [ref=e61]: Welcome admin
+      - paragraph [ref=e62]: Select your location from the list below. Use the search bar to find your location.
+    - search [ref=e63]:
+      - searchbox "Search for a location" [ref=e65]: Outpatient Clinic
+      - button "Clear search input" [ref=e327] [cursor=pointer]
+    - group [ref=e331]:
+      - generic [ref=e332]:
+        - radio "Outpatient Clinic" [checked] [active] [ref=e333]
+        - generic [ref=e334] [cursor=pointer]: Outpatient Clinic
+    - generic [ref=e320]:
+      - generic [ref=e321]:
+        - checkbox "Remember my location for future logins" [ref=e322]
+        - generic [ref=e323] [cursor=pointer]: Remember my location for future logins
+      - button "Confirm" [ref=e325] [cursor=pointer]

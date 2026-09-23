@@ -1,0 +1,13 @@
+[  -16078ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ https://dev3.openmrs.org/openmrs/spa/0f1f3081096a380c.js:0
+[  -15118ms] [INFO] [@carbon/feature-flags] `enable-v12-dynamic-floating-styles` is available but not enabled.
+Enable dynamic setting of floating styles for components like Popover, Tooltip, etc.
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/a3e04ebde81c5da1.js:0
+[  -15080ms] [ERROR] Unknown config key '@openmrs/esm-laboratory-app.labTableColumns' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -10507ms] [ERROR] Unknown config key '@openmrs/esm-patient-chart-app.restrictByVisitLocationTag' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -10507ms] [ERROR] Unknown config key '@openmrs/esm-patient-chart-app.showUpcomingAppointments' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[   -9310ms] [ERROR] Attempted to override the existing store order-basket. Make sure that stores are only created once. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:42
+[   -9302ms] [ERROR] Attempted to override the existing store patient-chart-global-store. Make sure that stores are only created once. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:42
+[   -8650ms] [ERROR] Attempted to override the existing store order-basket. Make sure that stores are only created once. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:42
+[   -8648ms] [ERROR] Attempted to override the existing store patient-chart-global-store. Make sure that stores are only created once. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:42
+[   -7945ms] [WARNING] An extension slot with the name 'patient-banner-tags-slot' already exists. Refusing to register the same slot name twice (in "registerExtensionSlot"). The existing one is from module @openmrs/esm-patient-search-app. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:14
+[   -7944ms] [WARNING] An extension slot with the name 'patient-banner-bottom-slot' already exists. Refusing to register the same slot name twice (in "registerExtensionSlot"). The existing one is from module @openmrs/esm-patient-search-app. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:14

@@ -1,0 +1,512 @@
+- generic [ref=e1]:
+  - navigation "Left navigation" [ref=e346]:
+    - generic [ref=e347]:
+      - link "Service queues" [ref=e350] [cursor=pointer]:
+        - /url: /openmrs/spa/home/service-queues
+      - link "Appointments" [ref=e355] [cursor=pointer]:
+        - /url: /openmrs/spa/home/appointments
+      - link "Patient lists" [ref=e360] [cursor=pointer]:
+        - /url: /openmrs/spa/home/patient-lists
+      - link "Billing" [ref=e364] [cursor=pointer]:
+        - /url: /openmrs/spa/home/billing
+      - link "Laboratory" [ref=e366] [cursor=pointer]:
+        - /url: /openmrs/spa/home/laboratory
+      - link "Wards" [ref=e369] [cursor=pointer]:
+        - /url: /openmrs/spa/home/ward
+  - generic [ref=e600]:
+    - generic [ref=e605]:
+      - banner "Workspace header" [ref=e606]:
+        - generic [ref=e607]: Create new appointment
+        - generic [ref=e610]:
+          - button "Close" [ref=e612] [cursor=pointer]
+          - tooltip [aria-hidden]
+      - generic [ref=e615]:
+        - generic [ref=e616]:
+          - search "Search for a patient by name or identifier number" [ref=e617]:
+            - searchbox "Search for a patient by name or identifier number" [ref=e619]: 10001C6
+            - button "Clear" [ref=e628] [cursor=pointer]
+          - button "Search" [ref=e620] [cursor=pointer]
+        - generic [ref=e631]:
+          - generic [ref=e634]:
+            - heading "1 search result" [level=2] [ref=e635]
+            - banner [ref=e637]:
+              - 'button "Avatar for Kenneth Carter Kenneth Carter Male Active Visit 31 yrs · 27-May-1995 · OpenMRS ID: 10001C6" [ref=e671] [cursor=pointer]':
+                - generic "Avatar for Kenneth Carter" [ref=e640]:
+                  - generic "Kenneth Carter" [ref=e641]: KC
+                - generic [ref=e643]:
+                  - generic [ref=e645]:
+                    - generic [ref=e646]: Kenneth Carter
+                    - generic [ref=e647]: Male
+                    - button "Active Visit" [ref=e675]:
+                      - generic "Active Visit" [ref=e677]
+                  - generic [ref=e651]:
+                    - generic [ref=e652]: 31 yrs
+                    - generic [ref=e653]: ·
+                    - generic [ref=e654]: 27-May-1995
+                    - generic [ref=e655]: ·
+                    - generic [ref=e659]:
+                      - generic [ref=e660]: "OpenMRS ID:"
+                      - text: 10001C6
+              - button "Show more" [ref=e662] [cursor=pointer]
+          - generic [ref=e666]:
+            - paragraph [ref=e667]: Can't find who you're looking for?
+            - button "Refine search" [ref=e668] [cursor=pointer]
+    - generic [ref=e682]:
+      - banner "Workspace header" [ref=e683]:
+        - generic [ref=e684]: Create new appointment
+        - generic [ref=e687]:
+          - button "Close" [ref=e689] [cursor=pointer]
+          - tooltip [aria-hidden]
+      - generic [ref=e693]:
+        - banner "patient banner" [ref=e696]:
+          - generic [ref=e697]:
+            - generic "Avatar for Kenneth Carter" [ref=e699]:
+              - generic "Kenneth Carter" [ref=e700]: KC
+            - generic [ref=e702]:
+              - generic [ref=e704]:
+                - generic [ref=e705]: Kenneth Carter
+                - generic [ref=e706]: Male
+                - button "Active Visit" [ref=e713] [cursor=pointer]:
+                  - generic "Active Visit" [ref=e715]
+              - generic [ref=e716]:
+                - generic [ref=e717]: 31 yrs
+                - generic [ref=e718]: ·
+                - generic [ref=e719]: 27-May-1995
+                - generic [ref=e720]: ·
+                - generic [ref=e724]:
+                  - generic [ref=e725]: "OpenMRS ID:"
+                  - text: 10001C6
+          - button "Show more" [ref=e726] [cursor=pointer]
+        - generic [ref=e729]:
+          - group "Location" [ref=e730]:
+            - generic [ref=e733]:
+              - generic [ref=e734]: Select a location
+              - combobox "Select a location" [active] [ref=e736] [cursor=pointer]:
+                - option "Choose a location"
+                - option "Outpatient Clinic" [selected]
+                - option "PNC"
+                - option "NICU"
+                - option "Delivery"
+                - option "ANC"
+                - option "laboratory"
+                - option "PNC 3"
+          - group "Service" [ref=e737]:
+            - generic [ref=e740]:
+              - generic [ref=e741]: Select a service
+              - combobox "Select a service" [ref=e743] [cursor=pointer]:
+                - option "Select service"
+                - option "General Medicine service" [selected]
+                - option "Outpatient Department"
+                - option "Rehabilitation service"
+          - group "Appointment Type" [ref=e744]:
+            - generic [ref=e747]:
+              - generic [ref=e748]: Select an appointment type
+              - combobox "Select an appointment type" [ref=e750] [cursor=pointer]:
+                - option "Choose appointment type"
+                - option "Scheduled" [selected]
+          - group "Recurring Appointment" [ref=e751]:
+            - generic [ref=e754]:
+              - switch "Is this a recurring appointment?" [ref=e755]
+              - generic [ref=e756]:
+                - generic [ref=e757]: Is this a recurring appointment?
+                - generic [aria-hidden] [ref=e760] [cursor=pointer]: "No"
+          - group "Appointment time" [ref=e761]:
+            - generic [ref=e764]:
+              - generic [ref=e765]:
+                - generic [ref=e767]:
+                  - generic [ref=e768]: Date
+                  - group [ref=e769]:
+                    - spinbutton "day, Date" [ref=e770]: "15"
+                    - generic [aria-hidden] [ref=e771]: /
+                    - spinbutton "month, Date" [ref=e772]: "09"
+                    - generic [aria-hidden] [ref=e773]: /
+                    - spinbutton "year, Date" [ref=e774]: "2026"
+                    - button "Calendar Date" [ref=e775]
+                - textbox [ref=e779]: 2026-09-15
+              - generic [ref=e780]:
+                - generic [ref=e781]: Time
+                - generic [ref=e782]:
+                  - textbox "Time" [ref=e784]:
+                    - /placeholder: hh:mm
+                    - text: 03:15
+                  - combobox "Time" [ref=e786] [cursor=pointer]:
+                    - option "AM"
+                    - option "PM" [selected]
+              - generic [ref=e788]:
+                - generic [ref=e789]: Duration (minutes)
+                - spinbutton "Duration (minutes)" [ref=e791]
+          - group [ref=e829]:
+            - generic [ref=e831]:
+              - generic [ref=e833]: Sept 2026
+              - generic [ref=e834]:
+                - button "SUN" [ref=e835]
+                - button "MON" [ref=e837]
+                - button "TUE" [ref=e839]
+                - button "WED" [ref=e841]
+                - button "THUR" [ref=e843]
+                - button "FRI" [ref=e845]
+                - button "SAT" [ref=e847]
+              - generic [ref=e850]:
+                - generic [ref=e853] [cursor=pointer]:
+                  - text: "30"
+                  - generic [ref=e854]:
+                    - button
+                    - generic [ref=e855]: "0"
+                - generic [ref=e859] [cursor=pointer]:
+                  - text: "31"
+                  - generic [ref=e860]:
+                    - button
+                    - generic [ref=e861]: "0"
+                - generic [ref=e865] [cursor=pointer]:
+                  - text: "1"
+                  - generic [ref=e866]:
+                    - button
+                    - generic [ref=e867]: "0"
+                - generic [ref=e871] [cursor=pointer]:
+                  - text: "2"
+                  - generic [ref=e872]:
+                    - button
+                    - generic [ref=e873]: "0"
+                - generic [ref=e877] [cursor=pointer]:
+                  - text: "3"
+                  - generic [ref=e878]:
+                    - button
+                    - generic [ref=e879]: "0"
+                - generic [ref=e883] [cursor=pointer]:
+                  - text: "4"
+                  - generic [ref=e884]:
+                    - button
+                    - generic [ref=e885]: "0"
+                - generic [ref=e889] [cursor=pointer]:
+                  - text: "5"
+                  - generic [ref=e890]:
+                    - button
+                    - generic [ref=e891]: "0"
+                - generic [ref=e895] [cursor=pointer]:
+                  - text: "6"
+                  - generic [ref=e896]:
+                    - button
+                    - generic [ref=e897]: "0"
+                - generic [ref=e901] [cursor=pointer]:
+                  - text: "7"
+                  - generic [ref=e902]:
+                    - button
+                    - generic [ref=e903]: "0"
+                - generic [ref=e907] [cursor=pointer]:
+                  - text: "8"
+                  - generic [ref=e908]:
+                    - button
+                    - generic [ref=e909]: "0"
+                - generic [ref=e913] [cursor=pointer]:
+                  - text: "9"
+                  - generic [ref=e914]:
+                    - button
+                    - generic [ref=e915]: "0"
+                - generic [ref=e919] [cursor=pointer]:
+                  - text: "10"
+                  - generic [ref=e920]:
+                    - button
+                    - generic [ref=e921]: "0"
+                - generic [ref=e925] [cursor=pointer]:
+                  - text: "11"
+                  - generic [ref=e926]:
+                    - button
+                    - generic [ref=e927]: "0"
+                - generic [ref=e931] [cursor=pointer]:
+                  - text: "12"
+                  - generic [ref=e932]:
+                    - button
+                    - generic [ref=e933]: "0"
+                - generic [ref=e937] [cursor=pointer]:
+                  - text: "13"
+                  - generic [ref=e938]:
+                    - button
+                    - generic [ref=e939]: "0"
+                - generic [ref=e943] [cursor=pointer]:
+                  - text: "14"
+                  - generic [ref=e944]:
+                    - button
+                    - generic [ref=e945]: "0"
+                - generic [ref=e949] [cursor=pointer]:
+                  - text: "15"
+                  - generic [ref=e950]:
+                    - button
+                    - generic [ref=e951]: "0"
+                - generic [ref=e955] [cursor=pointer]:
+                  - text: "16"
+                  - generic [ref=e956]:
+                    - button
+                    - generic [ref=e957]: "0"
+                - generic [ref=e961] [cursor=pointer]:
+                  - text: "17"
+                  - generic [ref=e962]:
+                    - button
+                    - generic [ref=e963]: "0"
+                - generic [ref=e967] [cursor=pointer]:
+                  - text: "18"
+                  - generic [ref=e968]:
+                    - button
+                    - generic [ref=e969]: "0"
+                - generic [ref=e973] [cursor=pointer]:
+                  - text: "19"
+                  - generic [ref=e974]:
+                    - button
+                    - generic [ref=e975]: "0"
+                - generic [ref=e979] [cursor=pointer]:
+                  - text: "20"
+                  - generic [ref=e980]:
+                    - button
+                    - generic [ref=e981]: "0"
+                - generic [ref=e985] [cursor=pointer]:
+                  - text: "21"
+                  - generic [ref=e986]:
+                    - button
+                    - generic [ref=e987]: "0"
+                - generic [ref=e991] [cursor=pointer]:
+                  - text: "22"
+                  - generic [ref=e992]:
+                    - button
+                    - generic [ref=e993]: "0"
+                - generic [ref=e997] [cursor=pointer]:
+                  - text: "23"
+                  - generic [ref=e998]:
+                    - button
+                    - generic [ref=e999]: "0"
+                - generic [ref=e1003] [cursor=pointer]:
+                  - text: "24"
+                  - generic [ref=e1004]:
+                    - button
+                    - generic [ref=e1005]: "0"
+                - generic [ref=e1009] [cursor=pointer]:
+                  - text: "25"
+                  - generic [ref=e1010]:
+                    - button
+                    - generic [ref=e1011]: "0"
+                - generic [ref=e1015] [cursor=pointer]:
+                  - text: "26"
+                  - generic [ref=e1016]:
+                    - button
+                    - generic [ref=e1017]: "0"
+                - generic [ref=e1021] [cursor=pointer]:
+                  - text: "27"
+                  - generic [ref=e1022]:
+                    - button
+                    - generic [ref=e1023]: "0"
+                - generic [ref=e1027] [cursor=pointer]:
+                  - text: "28"
+                  - generic [ref=e1028]:
+                    - button
+                    - generic [ref=e1029]: "0"
+                - generic [ref=e1033] [cursor=pointer]:
+                  - text: "29"
+                  - generic [ref=e1034]:
+                    - button
+                    - generic [ref=e1035]: "0"
+                - generic [ref=e1039] [cursor=pointer]:
+                  - text: "30"
+                  - generic [ref=e1040]:
+                    - button
+                    - generic [ref=e1041]: "0"
+                - generic [ref=e1045] [cursor=pointer]:
+                  - text: "1"
+                  - generic [ref=e1046]:
+                    - button
+                    - generic [ref=e1047]: "0"
+                - generic [ref=e1051] [cursor=pointer]:
+                  - text: "2"
+                  - generic [ref=e1052]:
+                    - button
+                    - generic [ref=e1053]: "0"
+                - generic [ref=e1057] [cursor=pointer]:
+                  - text: "3"
+                  - generic [ref=e1058]:
+                    - button
+                    - generic [ref=e1059]: "0"
+          - group "Provider" [ref=e792]:
+            - generic [ref=e795]:
+              - generic [ref=e796]: Select a provider
+              - combobox "Select a provider" [ref=e798] [cursor=pointer]:
+                - option "Choose a provider"
+                - option "UNKNOWN - Unknown Provider"
+                - option "admin - Super User" [selected]
+                - option "7-5 - Testing Ayaew Abaye"
+                - option "8-3 - Esayas Nigussie Esayas"
+                - option "9-1 - freee Lakew Birara"
+                - option "doctor - Jake Doctor"
+                - option "nurse - Jane Nurse"
+                - option "clerk - John Clerk"
+                - option "technician - June Technician"
+          - group "Date appointment scheduled" [ref=e799]:
+            - generic [ref=e802]:
+              - generic [ref=e804]:
+                - generic [ref=e805]: Date appointment issued
+                - group [ref=e806]:
+                  - spinbutton "day, Date appointment issued" [ref=e807]: "15"
+                  - generic [aria-hidden] [ref=e808]: /
+                  - spinbutton "month, Date appointment issued" [ref=e809]: "09"
+                  - generic [aria-hidden] [ref=e810]: /
+                  - spinbutton "year, Date appointment issued" [ref=e811]: "2026"
+                  - button "Calendar Date appointment issued" [ref=e812]
+              - textbox [ref=e816]: 2026-09-15
+          - group "Note" [ref=e817]:
+            - generic [ref=e819]:
+              - generic [ref=e820]:
+                - generic [ref=e821]: Write an additional note
+                - generic [ref=e822]: 0/255
+              - generic [ref=e823]:
+                - textbox "Write an additional note" [ref=e824]:
+                  - /placeholder: Write any additional points here
+                - alert [ref=e825]
+        - generic [ref=e826]:
+          - button "Discard" [ref=e827] [cursor=pointer]
+          - button "Save and close" [ref=e828] [cursor=pointer]
+  - banner "OpenMRS" [ref=e374]:
+    - link [ref=e375] [cursor=pointer]:
+      - /url: /openmrs/spa/home
+      - img "OpenMRS Logo" [ref=e377]
+    - generic [ref=e382]:
+      - button "Change location" [ref=e384] [cursor=pointer]:
+        - generic [ref=e387]: Outpatient Clinic
+      - tooltip [aria-hidden]
+    - generic [ref=e388]:
+      - generic [ref=e389]:
+        - generic [ref=e393]:
+          - button "Search patient" [ref=e395] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e399]:
+          - button "Implementer Tools" [ref=e401] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e405]:
+          - button "Add patient" [ref=e407] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - button "My Account" [ref=e414] [cursor=pointer]
+            - tooltip [aria-hidden]
+          - generic:
+            - generic "User menu":
+              - list "User menu options":
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "User":
+                        - paragraph [ref=e419]: Super User
+                  - generic:
+                    - listitem:
+                      - generic "Change language":
+                        - paragraph [ref=e423]: English
+                        - button "Change" [ref=e424] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic "Change password":
+                        - paragraph [ref=e428]: Password
+                        - button "Change" [ref=e429] [cursor=pointer]
+                - listitem [ref=e430]:
+                  - separator [aria-hidden] [ref=e431]
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "Logout":
+                        - button "Logout" [ref=e432] [cursor=pointer]
+      - generic [ref=e436]:
+        - button "App Menu" [ref=e438] [cursor=pointer]
+        - tooltip [aria-hidden]
+      - generic "Notifications Panel":
+        - heading "Notifications" [level=1]
+  - generic [ref=e4]:
+    - button [ref=e57] [cursor=pointer]
+    - main [ref=e442]:
+      - generic [ref=e443]:
+        - main [ref=e447]:
+          - generic [ref=e448]:
+            - generic [ref=e452]:
+              - paragraph [ref=e453]: Clinic
+              - paragraph [ref=e454]: Appointments
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - group "Appointment date" [ref=e459]:
+                  - spinbutton "day, Appointment date" [ref=e460]: "15"
+                  - generic [aria-hidden] [ref=e461]: /
+                  - spinbutton "month, Appointment date" [ref=e462]: "09"
+                  - generic [aria-hidden] [ref=e463]: /
+                  - spinbutton "year, Appointment date" [ref=e464]: "2026"
+                  - button "Calendar Appointment date" [ref=e465]
+                - textbox [ref=e469]: 2026-09-15
+              - combobox [ref=e473] [cursor=pointer]:
+                - generic [ref=e474]: Filter appointments by service type
+                - img "Open menu" [ref=e476]
+          - generic [ref=e479]:
+            - button "Appointments calendar" [ref=e480] [cursor=pointer]
+            - button "Create new appointment" [ref=e483] [cursor=pointer]
+          - generic [ref=e487]:
+            - article [ref=e489]:
+              - generic [ref=e490]: Scheduled appointments
+              - generic [ref=e493]:
+                - generic [ref=e494]:
+                  - text: Appointments
+                  - paragraph [ref=e495]: "0"
+                - generic [ref=e496]:
+                  - generic [ref=e497]: Checked in
+                  - generic [ref=e498]: Not arrived
+                  - paragraph [ref=e499]: "0"
+                  - paragraph [ref=e500]: "0"
+            - article [ref=e621]:
+              - generic [ref=e622]: "Highest volume service: Today"
+              - generic [ref=e626]:
+                - text: Service name
+                - paragraph [ref=e627]: "--"
+            - article [ref=e503]:
+              - generic [ref=e504]: "Providers booked: Today"
+              - generic [ref=e508]:
+                - text: Providers
+                - paragraph [ref=e509]: "0"
+          - generic [ref=e512]:
+            - 'heading "Appointments for: Today" [level=2] [ref=e515]'
+            - generic [ref=e516]:
+              - region "data table toolbar" [ref=e517]:
+                - generic [aria-hidden]:
+                  - generic:
+                    - paragraph: 0 items selected
+                  - generic:
+                    - button: Change status
+                    - button: Cancel
+                - generic [ref=e518]:
+                  - search "Filter table" [ref=e519]:
+                    - generic [ref=e520]: Filter appointments
+                    - searchbox "Filter appointments" [ref=e521]
+                  - combobox [ref=e525] [cursor=pointer]:
+                    - generic [ref=e526]: Filter appointments by status
+                    - img "Open menu" [ref=e528]
+                  - button "Download" [ref=e530] [cursor=pointer]
+              - table [ref=e534]:
+                - rowgroup [ref=e535]:
+                  - row [ref=e536]:
+                    - columnheader [ref=e537]:
+                      - button "Collapse all rows" [expanded] [ref=e538] [cursor=pointer]
+                    - columnheader "Select all rows" [ref=e541]:
+                      - generic [ref=e542]:
+                        - checkbox "Select all rows" [ref=e543]
+                        - generic [ref=e544] [cursor=pointer]: Select all rows
+                    - columnheader [ref=e546]:
+                      - button "Patient name" [ref=e547] [cursor=pointer]
+                    - columnheader [ref=e552]:
+                      - button "Identifier" [ref=e553] [cursor=pointer]
+                    - columnheader [ref=e558]:
+                      - button "Location" [ref=e559] [cursor=pointer]
+                    - columnheader [ref=e564]:
+                      - button "Service type" [ref=e565] [cursor=pointer]
+                    - columnheader [ref=e570]:
+                      - button "Appointment time" [ref=e571] [cursor=pointer]
+                    - columnheader [ref=e576]:
+                      - button "Visit start time" [ref=e577] [cursor=pointer]
+                    - columnheader [ref=e582]:
+                      - button "Status" [ref=e583] [cursor=pointer]
+                    - columnheader "Actions" [ref=e588]
+                    - columnheader
+                - rowgroup
+            - generic [ref=e594]:
+              - paragraph [ref=e595]: No appointments to display
+              - paragraph [ref=e596]: Check the filters above
+        - generic:
+          - complementary
+    - button "Toggle Implementer Tools" [ref=e63] [cursor=pointer]

@@ -29,4 +29,10 @@ export class LoginPage {
     await this.passwordInput.fill(password);
     await this.logInButton.click();
   }
+
+  async selectLocation(location: string): Promise<void> {
+    await this.page.getByRole('searchbox', { name: 'Search for a location' }).fill(location);
+    await this.page.locator('label').filter({ hasText: location }).click();
+    await this.page.getByRole('button', { name: 'Confirm' }).click();
+  }
 }

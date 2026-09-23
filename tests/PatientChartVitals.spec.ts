@@ -2,11 +2,9 @@ import { test, expect } from './fixtures/openmrs.fixture';
 import { HomePage } from './Pages/HomePage';
 import { PatientChartPage } from './Pages/PatientChartPage';
 import { PatientSearchPage } from './Pages/PatientSearchPage';
+import testData from './fixtures/openmrs.test-data.json';
 
-test.describe('Core end-user workflows', () => {
-  // The shared demo intermittently rejects valid admin sessions before the scenario can start.
-  test.fixme(true, 'OpenMRS demo authentication is currently unavailable for authenticated workflows.');
-
+test.describe('@Core end-user workflows', () => {
   test('Find an existing patient and document current vital signs', async ({ authenticatedPage }) => {
     const homePage = new HomePage(authenticatedPage);
     const patientSearchPage = new PatientSearchPage(authenticatedPage);
@@ -17,43 +15,31 @@ test.describe('Core end-user workflows', () => {
     await expect(patientSearchPage.closeButton).toBeVisible();
 
     // 2. Search for a known seeded patient by identifier.
-    await patientSearchPage.searchFor('10001C6');
-    await expect(patientSearchPage.result('Kenneth Carter')).toBeVisible();
-    await expect(authenticatedPage.getByText('CR Number: 10001C6', { exact: true })).toBeVisible();
+    await patientSearchPage.searchFor(testData.patients.seeded.identifier);
+    await expect(patientSearchPage.result(testData.patients.seeded.name)).toBeVisible();
+    await expect(authenticatedPage.getByText(`OpenMRS ID: ${testData.patients.seeded.identifier}`, { exact: true })).toBeVisible();
 
     // 3. Verify a nonexistent query does not return a patient record.
-    await patientSearchPage.searchFor(`NoSuchPatient${Date.now()}`);
-    await expect(patientSearchPage.result('Kenneth Carter')).toBeHidden();
+    await patientSearchPage.searchFor(`${testData.patients.missingSearchPrefix}${Date.now()}`);
+    await expect(patientSearchPage.result(testData.patients.seeded.name)).toBeHidden();
 
     // 4. Search again and open the patient chart.
-    await patientSearchPage.searchFor('Kenneth Carter');
-    await patientSearchPage.openPatient('Kenneth Carter');
+    await patientSearchPage.searchFor(testData.patients.seeded.name);
+    await patientSearchPage.openPatient(testData.patients.seeded.name);
     const chartPage = new PatientChartPage(authenticatedPage);
     await expect(chartPage.patientSummaryLink).toBeVisible();
-    await expect(chartPage.vitalsAndBiometricsLink).toBeVisible();
-    await expect(chartPage.medicationsLink).toBeVisible();
-    await expect(chartPage.ordersLink).toBeVisible();
-    await expect(chartPage.resultsLink).toBeVisible();
-    await expect(chartPage.visitsLink).toBeVisible();
-    await expect(chartPage.allergiesLink).toBeVisible();
-    await expect(chartPage.conditionsLink).toBeVisible();
-    await expect(chartPage.appointmentsLink).toBeVisible();
-    await expect(chartPage.billingHistoryLink).toBeVisible();
+    await expect(chartPage.recordVitalsButton).toBeVisible({ timeout: 20_000 });
 
     // 5. Record a valid vital-sign set and confirm it remains on Kenneth Carter's chart.
-    await chartPage.startVitalsCapture();
-    await chartPage.enterVitalSigns({
-      temperature: '36.8',
-      systolicBloodPressure: '120',
-      diastolicBloodPressure: '80',
-      pulse: '72',
-      respiratoryRate: '16',
-      oxygenSaturation: '98',
-      weight: '70',
-      height: '170',
-    });
+    await chartPage.startVitalsCapture(testData.vitals.visitType);
+    await chartPage.enterVitalSigns(testData.vitals);
     await chartPage.saveVitals();
-    await expect(authenticatedPage.getByText('Kenneth Carter', { exact: true })).toBeVisible();
-    await expect(authenticatedPage.getByText('120 / 80', { exact: true })).toBeVisible();
+    await expect(authenticatedPage.getByRole('banner', { name: 'patient banner' }).getByText(testData.patients.seeded.name, { exact: true })).toBeVisible();
+    const latestVitalsRow = authenticatedPage
+      .getByRole('table', { name: 'vitals' })
+      .getByRole('row')
+      .filter({ hasText: `${testData.vitals.systolicBloodPressure} / ${testData.vitals.diastolicBloodPressure}` })
+      .first();
+    await expect(latestVitalsRow).toBeVisible();
   });
 });

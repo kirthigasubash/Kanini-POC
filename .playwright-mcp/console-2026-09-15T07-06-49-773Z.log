@@ -1,0 +1,9 @@
+[  -14439ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ https://dev3.openmrs.org/openmrs/spa/0f1f3081096a380c.js:0
+[  -13321ms] [ERROR] Unknown config key '@openmrs/esm-laboratory-app.labTableColumns' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -13295ms] [INFO] [@carbon/feature-flags] `enable-v12-dynamic-floating-styles` is available but not enabled.
+Enable dynamic setting of floating styles for components like Popover, Tooltip, etc.
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/a3e04ebde81c5da1.js:0
+[  -10783ms] [ERROR] Unknown config key '@openmrs/esm-patient-chart-app.restrictByVisitLocationTag' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -10783ms] [ERROR] Unknown config key '@openmrs/esm-patient-chart-app.showUpcomingAppointments' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[   -8088ms] [WARNING] An extension slot with the name 'patient-banner-tags-slot' already exists. Refusing to register the same slot name twice (in "registerExtensionSlot"). The existing one is from module @openmrs/esm-patient-search-app. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:14
+[   -8088ms] [WARNING] An extension slot with the name 'patient-banner-bottom-slot' already exists. Refusing to register the same slot name twice (in "registerExtensionSlot"). The existing one is from module @openmrs/esm-patient-search-app. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:14

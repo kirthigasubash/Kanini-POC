@@ -1,0 +1,3 @@
+- generic [ref=e4]:
+  - button [ref=e57] [cursor=pointer]
+  - button "Toggle Implementer Tools" [ref=e63] [cursor=pointer]

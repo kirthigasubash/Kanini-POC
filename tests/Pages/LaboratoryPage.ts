@@ -10,13 +10,14 @@ export class LaboratoryPage {
   readonly testsTable: Locator;
 
   constructor(page: Page) {
-    this.heading = page.getByRole('heading', { name: 'Laboratory' }).first();
+    const testsOrderedPanel = page.getByRole('tabpanel', { name: 'Tests ordered' });
+    this.heading = page.getByRole('main').getByText('Laboratory', { exact: true });
     this.addTestOrderButton = page.getByText('Add test order', { exact: true });
-    this.testsOrderedHeading = page.getByText('Tests ordered', { exact: true });
+    this.testsOrderedHeading = page.getByRole('tab', { name: 'Tests ordered', exact: true });
     this.worklistHeading = page.getByText('Worklist', { exact: true });
     this.resultsHeading = page.getByText('Results', { exact: true });
-    this.dateRange = page.getByText('Date range:', { exact: true });
-    this.testsTable = page.getByRole('table');
+    this.dateRange = testsOrderedPanel.getByText('Date range:', { exact: true });
+    this.testsTable = testsOrderedPanel.getByRole('table');
   }
 
   async openAddTestOrder(): Promise<void> {

@@ -1,0 +1,23 @@
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - img "OpenMRS logo" [ref=e8]
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]: Username
+        - generic [ref=e16]:
+          - textbox "Username" [ref=e17]: admin
+          - alert [ref=e18]
+      - generic [ref=e34]:
+        - generic [ref=e35]: Password
+        - generic [ref=e37]:
+          - textbox "Password" [active] [ref=e38]
+          - generic:
+            - button "Show password" [ref=e39] [cursor=pointer]
+            - tooltip [aria-hidden]
+      - button "Log in" [ref=e43] [cursor=pointer]
+  - generic [ref=e24]:
+    - generic [ref=e25]: Built with
+    - img "OpenMRS logo" [ref=e26]
+    - generic [ref=e28]: An open-source medical record system and global community
+    - link [ref=e29] [cursor=pointer]:
+      - /url: https://openmrs.org

@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - banner "OpenMRS" [ref=e334]:
+    - link [ref=e335] [cursor=pointer]:
+      - /url: /openmrs/spa/home
+      - img "OpenMRS Logo" [ref=e337]
+    - generic [ref=e342]:
+      - button "Change location" [ref=e344] [cursor=pointer]:
+        - generic [ref=e347]: Outpatient Clinic
+      - tooltip [aria-hidden]
+    - generic [ref=e348]:
+      - generic [ref=e349]:
+        - generic [ref=e351]:
+          - button "Implementer Tools" [ref=e353] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e357]:
+          - generic [ref=e358]:
+            - button "My Account" [ref=e360] [cursor=pointer]
+            - tooltip [aria-hidden]
+          - generic:
+            - generic "User menu":
+              - list "User menu options":
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "User":
+                        - paragraph [ref=e365]: Super User
+                  - generic:
+                    - listitem:
+                      - generic "Change language":
+                        - paragraph [ref=e369]: English
+                        - button "Change" [ref=e370] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic "Change password":
+                        - paragraph [ref=e374]: Password
+                        - button "Change" [ref=e375] [cursor=pointer]
+                - listitem [ref=e376]:
+                  - separator [aria-hidden] [ref=e377]
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "Logout":
+                        - button "Logout" [ref=e378] [cursor=pointer]
+      - generic [ref=e382]:
+        - button "App Menu" [ref=e384] [cursor=pointer]
+        - tooltip [aria-hidden]
+      - generic "Notifications Panel":
+        - heading "Notifications" [level=1]
+  - generic [ref=e3]:
+    - button [ref=e43] [cursor=pointer]
+    - button "Toggle Implementer Tools" [ref=e49] [cursor=pointer]

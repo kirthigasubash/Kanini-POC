@@ -1,0 +1,165 @@
+- generic [ref=e4]:
+  - button [ref=e57] [cursor=pointer]
+  - button "Toggle Implementer Tools" [ref=e63] [cursor=pointer]
+  - generic [ref=e68]:
+    - generic [ref=e69]:
+      - paragraph [ref=e70]: Welcome admin
+      - paragraph [ref=e71]: Select your location from the list below. Use the search bar to find your location.
+    - search [ref=e72]:
+      - searchbox "Search for a location" [ref=e74]
+    - group [ref=e78]:
+      - generic [ref=e79]:
+        - radio "Felegehiwot General Hospital" [ref=e80]
+        - generic [ref=e81] [cursor=pointer]: Felegehiwot General Hospital
+      - generic [ref=e84]:
+        - radio "Outpatient Clinic" [ref=e85]
+        - generic [ref=e86] [cursor=pointer]: Outpatient Clinic
+      - generic [ref=e89]:
+        - radio "Inpatient Ward" [ref=e90]
+        - generic [ref=e91] [cursor=pointer]: Inpatient Ward
+      - generic [ref=e94]:
+        - radio "Mobile Clinic" [ref=e95]
+        - generic [ref=e96] [cursor=pointer]: Mobile Clinic
+      - generic [ref=e99]:
+        - radio "Community Outreach" [ref=e100]
+        - generic [ref=e101] [cursor=pointer]: Community Outreach
+      - generic [ref=e104]:
+        - radio "Ward 1" [ref=e105]
+        - generic [ref=e106] [cursor=pointer]: Ward 1
+      - generic [ref=e109]:
+        - radio "Ward 2" [ref=e110]
+        - generic [ref=e111] [cursor=pointer]: Ward 2
+      - generic [ref=e114]:
+        - radio "Ward 3" [ref=e115]
+        - generic [ref=e116] [cursor=pointer]: Ward 3
+      - generic [ref=e119]:
+        - radio "Site 1" [ref=e120]
+        - generic [ref=e121] [cursor=pointer]: Site 1
+      - generic [ref=e124]:
+        - radio "Site 2" [ref=e125]
+        - generic [ref=e126] [cursor=pointer]: Site 2
+      - generic [ref=e129]:
+        - radio "Site 3" [ref=e130]
+        - generic [ref=e131] [cursor=pointer]: Site 3
+      - generic [ref=e134]:
+        - radio "Site 4" [ref=e135]
+        - generic [ref=e136] [cursor=pointer]: Site 4
+      - generic [ref=e139]:
+        - radio "Site 5" [ref=e140]
+        - generic [ref=e141] [cursor=pointer]: Site 5
+      - generic [ref=e144]:
+        - radio "Site 6" [ref=e145]
+        - generic [ref=e146] [cursor=pointer]: Site 6
+      - generic [ref=e149]:
+        - radio "Site 7" [ref=e150]
+        - generic [ref=e151] [cursor=pointer]: Site 7
+      - generic [ref=e154]:
+        - radio "Site 8" [ref=e155]
+        - generic [ref=e156] [cursor=pointer]: Site 8
+      - generic [ref=e159]:
+        - radio "Site 9" [ref=e160]
+        - generic [ref=e161] [cursor=pointer]: Site 9
+      - generic [ref=e164]:
+        - radio "Site 10" [ref=e165]
+        - generic [ref=e166] [cursor=pointer]: Site 10
+      - generic [ref=e169]:
+        - radio "Site 11" [ref=e170]
+        - generic [ref=e171] [cursor=pointer]: Site 11
+      - generic [ref=e174]:
+        - radio "Site 12" [ref=e175]
+        - generic [ref=e176] [cursor=pointer]: Site 12
+      - generic [ref=e179]:
+        - radio "Site 13" [ref=e180]
+        - generic [ref=e181] [cursor=pointer]: Site 13
+      - generic [ref=e184]:
+        - radio "Site 14" [ref=e185]
+        - generic [ref=e186] [cursor=pointer]: Site 14
+      - generic [ref=e189]:
+        - radio "Site 15" [ref=e190]
+        - generic [ref=e191] [cursor=pointer]: Site 15
+      - generic [ref=e194]:
+        - radio "Site 16" [ref=e195]
+        - generic [ref=e196] [cursor=pointer]: Site 16
+      - generic [ref=e199]:
+        - radio "Site 17" [ref=e200]
+        - generic [ref=e201] [cursor=pointer]: Site 17
+      - generic [ref=e204]:
+        - radio "Site 18" [ref=e205]
+        - generic [ref=e206] [cursor=pointer]: Site 18
+      - generic [ref=e209]:
+        - radio "Site 19" [ref=e210]
+        - generic [ref=e211] [cursor=pointer]: Site 19
+      - generic [ref=e214]:
+        - radio "Site 20" [ref=e215]
+        - generic [ref=e216] [cursor=pointer]: Site 20
+      - generic [ref=e219]:
+        - radio "Site 21" [ref=e220]
+        - generic [ref=e221] [cursor=pointer]: Site 21
+      - generic [ref=e224]:
+        - radio "Site 22" [ref=e225]
+        - generic [ref=e226] [cursor=pointer]: Site 22
+      - generic [ref=e229]:
+        - radio "Site 23" [ref=e230]
+        - generic [ref=e231] [cursor=pointer]: Site 23
+      - generic [ref=e234]:
+        - radio "Site 24" [ref=e235]
+        - generic [ref=e236] [cursor=pointer]: Site 24
+      - generic [ref=e239]:
+        - radio "Site 25" [ref=e240]
+        - generic [ref=e241] [cursor=pointer]: Site 25
+      - generic [ref=e244]:
+        - radio "Site 26" [ref=e245]
+        - generic [ref=e246] [cursor=pointer]: Site 26
+      - generic [ref=e249]:
+        - radio "Site 27" [ref=e250]
+        - generic [ref=e251] [cursor=pointer]: Site 27
+      - generic [ref=e254]:
+        - radio "Site 28" [ref=e255]
+        - generic [ref=e256] [cursor=pointer]: Site 28
+      - generic [ref=e259]:
+        - radio "Site 29" [ref=e260]
+        - generic [ref=e261] [cursor=pointer]: Site 29
+      - generic [ref=e264]:
+        - radio "Site 30" [ref=e265]
+        - generic [ref=e266] [cursor=pointer]: Site 30
+      - generic [ref=e269]:
+        - radio "Site 31" [ref=e270]
+        - generic [ref=e271] [cursor=pointer]: Site 31
+      - generic [ref=e274]:
+        - radio "Site 32" [ref=e275]
+        - generic [ref=e276] [cursor=pointer]: Site 32
+      - generic [ref=e279]:
+        - radio "Site 33" [ref=e280]
+        - generic [ref=e281] [cursor=pointer]: Site 33
+      - generic [ref=e284]:
+        - radio "Site 34" [ref=e285]
+        - generic [ref=e286] [cursor=pointer]: Site 34
+      - generic [ref=e289]:
+        - radio "Site 35" [ref=e290]
+        - generic [ref=e291] [cursor=pointer]: Site 35
+      - generic [ref=e294]:
+        - radio "Site 36" [ref=e295]
+        - generic [ref=e296] [cursor=pointer]: Site 36
+      - generic [ref=e299]:
+        - radio "Site 37" [ref=e300]
+        - generic [ref=e301] [cursor=pointer]: Site 37
+      - generic [ref=e304]:
+        - radio "Site 38" [ref=e305]
+        - generic [ref=e306] [cursor=pointer]: Site 38
+      - generic [ref=e309]:
+        - radio "Site 39" [ref=e310]
+        - generic [ref=e311] [cursor=pointer]: Site 39
+      - generic [ref=e314]:
+        - radio "Site 40" [ref=e315]
+        - generic [ref=e316] [cursor=pointer]: Site 40
+      - generic [ref=e319]:
+        - radio "Site 41" [ref=e320]
+        - generic [ref=e321] [cursor=pointer]: Site 41
+      - generic [ref=e324]:
+        - radio "Site 42" [ref=e325]
+        - generic [ref=e326] [cursor=pointer]: Site 42
+    - generic [ref=e329]:
+      - generic [ref=e330]:
+        - checkbox "Remember my location for future logins" [ref=e331]
+        - generic [ref=e332] [cursor=pointer]: Remember my location for future logins
+      - button "Confirm" [disabled] [ref=e334]

@@ -1,6 +1,7 @@
 import { type Locator, type Page } from '@playwright/test';
 
 export type VitalSigns = {
+  visitType: string;
   temperature: string;
   systolicBloodPressure: string;
   diastolicBloodPressure: string;
@@ -25,32 +26,50 @@ export class PatientChartPage {
   readonly recordVitalsButton: Locator;
 
   constructor(private readonly page: Page) {
-    this.patientSummaryLink = page.getByText('Patient summary', { exact: true });
-    this.vitalsAndBiometricsLink = page.getByText('Vitals & Biometrics', { exact: true });
-    this.medicationsLink = page.getByText('Medications', { exact: true });
-    this.ordersLink = page.getByText('Orders', { exact: true });
-    this.resultsLink = page.getByText('Results', { exact: true });
-    this.visitsLink = page.getByText('Visits', { exact: true });
-    this.allergiesLink = page.getByText('Allergies', { exact: true });
-    this.conditionsLink = page.getByText('Conditions', { exact: true });
-    this.appointmentsLink = page.getByText('Appointments', { exact: true });
-    this.billingHistoryLink = page.getByText('Billing history', { exact: true });
-    this.recordVitalsButton = page.getByRole('button', { name: 'Record vitals' });
+    this.patientSummaryLink = page.getByRole('link', { name: 'Patient summary' });
+    this.vitalsAndBiometricsLink = page.getByRole('link', { name: 'Vitals & Biometrics' });
+    this.medicationsLink = page.getByRole('link', { name: 'Medications' });
+    this.ordersLink = page.getByRole('link', { name: 'Orders' });
+    this.resultsLink = page.getByRole('link', { name: 'Results' });
+    this.visitsLink = page.getByRole('link', { name: 'Visits' });
+    this.allergiesLink = page.getByRole('link', { name: 'Allergies' });
+    this.conditionsLink = page.getByRole('link', { name: 'Conditions' });
+    this.appointmentsLink = page.getByRole('link', { name: 'Appointments' });
+    this.billingHistoryLink = page.getByRole('link', { name: 'Billing history' });
+    this.recordVitalsButton = page.getByRole('button', { name: 'Record vitals', exact: true });
   }
 
-  async startVitalsCapture(): Promise<void> {
+  async startVitalsCapture(visitType: string): Promise<void> {
     await this.recordVitalsButton.click();
+    const startNewVisitButton = this.page.getByRole('button', { name: 'Start new visit' });
+    const vitalsInput = this.page.locator('input[type="number"]').first();
+    const visitRequired = await Promise.race([
+      startNewVisitButton.waitFor({ state: 'visible', timeout: 20_000 }).then(() => true),
+      vitalsInput.waitFor({ state: 'visible', timeout: 20_000 }).then(() => false),
+    ]);
+
+    if (visitRequired) {
+      await startNewVisitButton.click();
+      await this.page.getByText(visitType, { exact: true }).click();
+      const startVisitButton = this.page.getByRole('button', { name: 'Start visit', exact: true });
+      const startVisitWorkspace = this.page.getByRole('banner', { name: 'Workspace header' }).getByText('Start a visit', { exact: true });
+      await startVisitButton.click();
+      await startVisitWorkspace.waitFor({ state: 'hidden', timeout: 30_000 });
+      await this.recordVitalsButton.click();
+    }
+
+    await this.page.locator('input[type="number"]').first().waitFor({ state: 'visible', timeout: 20_000 });
   }
 
   async enterVitalSigns(vitals: VitalSigns): Promise<void> {
-    await this.page.getByLabel(/Temp/).fill(vitals.temperature);
-    await this.page.getByLabel(/Systolic|BP/).first().fill(vitals.systolicBloodPressure);
-    await this.page.getByLabel(/Diastolic/).fill(vitals.diastolicBloodPressure);
-    await this.page.getByLabel(/Pulse|Heart rate/).fill(vitals.pulse);
-    await this.page.getByLabel(/R\. Rate|Respiratory/).fill(vitals.respiratoryRate);
-    await this.page.getByLabel(/SpO2|Oxygen/).fill(vitals.oxygenSaturation);
-    await this.page.getByLabel(/Weight/).fill(vitals.weight);
-    await this.page.getByLabel(/Height/).fill(vitals.height);
+    await this.page.locator('input[name="Temperature"]').fill(vitals.temperature);
+    await this.page.locator('input[name="systolic"]').fill(vitals.systolicBloodPressure);
+    await this.page.locator('input[name="diastolic"]').fill(vitals.diastolicBloodPressure);
+    await this.page.locator('input[name="Pulse"]').fill(vitals.pulse);
+    await this.page.locator('input[name="Respiration rate"]').fill(vitals.respiratoryRate);
+    await this.page.locator('input[name="Oxygen saturation"]').fill(vitals.oxygenSaturation);
+    await this.page.locator('input[name="Weight"]').fill(vitals.weight);
+    await this.page.locator('input[name="Height"]').fill(vitals.height);
   }
 
   async saveVitals(): Promise<void> {

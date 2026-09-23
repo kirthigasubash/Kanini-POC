@@ -1,0 +1,214 @@
+- generic [active] [ref=e1]:
+  - alertdialog "Appointment scheduled" [ref=e1066]:
+    - link "Focus sentinel" [ref=e1067]
+    - generic [ref=e1068]:
+      - generic [ref=e1074]:
+        - generic [ref=e1075]: Appointment scheduled
+        - generic [ref=e1076]: It is now visible on the Appointments page
+      - button "Close snackbar" [ref=e1077] [cursor=pointer]
+    - link "Focus sentinel" [ref=e1080]
+  - navigation "Left navigation" [ref=e346]:
+    - generic [ref=e347]:
+      - link "Service queues" [ref=e350] [cursor=pointer]:
+        - /url: /openmrs/spa/home/service-queues
+      - link "Appointments" [ref=e355] [cursor=pointer]:
+        - /url: /openmrs/spa/home/appointments
+      - link "Patient lists" [ref=e360] [cursor=pointer]:
+        - /url: /openmrs/spa/home/patient-lists
+      - link "Billing" [ref=e364] [cursor=pointer]:
+        - /url: /openmrs/spa/home/billing
+      - link "Laboratory" [ref=e366] [cursor=pointer]:
+        - /url: /openmrs/spa/home/laboratory
+      - link "Wards" [ref=e369] [cursor=pointer]:
+        - /url: /openmrs/spa/home/ward
+  - banner "OpenMRS" [ref=e374]:
+    - link [ref=e375] [cursor=pointer]:
+      - /url: /openmrs/spa/home
+      - img "OpenMRS Logo" [ref=e377]
+    - generic [ref=e382]:
+      - button "Change location" [ref=e384] [cursor=pointer]:
+        - generic [ref=e387]: Outpatient Clinic
+      - tooltip [aria-hidden]
+    - generic [ref=e388]:
+      - generic [ref=e389]:
+        - generic [ref=e393]:
+          - button "Search patient" [ref=e395] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e399]:
+          - button "Implementer Tools" [ref=e401] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e405]:
+          - button "Add patient" [ref=e407] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - button "My Account" [ref=e414] [cursor=pointer]
+            - tooltip [aria-hidden]
+          - generic:
+            - generic "User menu":
+              - list "User menu options":
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "User":
+                        - paragraph [ref=e419]: Super User
+                  - generic:
+                    - listitem:
+                      - generic "Change language":
+                        - paragraph [ref=e423]: English
+                        - button "Change" [ref=e424] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic "Change password":
+                        - paragraph [ref=e428]: Password
+                        - button "Change" [ref=e429] [cursor=pointer]
+                - listitem [ref=e430]:
+                  - separator [aria-hidden] [ref=e431]
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "Logout":
+                        - button "Logout" [ref=e432] [cursor=pointer]
+      - generic [ref=e436]:
+        - button "App Menu" [ref=e438] [cursor=pointer]
+        - tooltip [aria-hidden]
+      - generic "Notifications Panel":
+        - heading "Notifications" [level=1]
+  - generic [ref=e4]:
+    - button [ref=e57] [cursor=pointer]
+    - main [ref=e442]:
+      - generic [ref=e443]:
+        - main [ref=e447]:
+          - generic [ref=e448]:
+            - generic [ref=e452]:
+              - paragraph [ref=e453]: Clinic
+              - paragraph [ref=e454]: Appointments
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - group "Appointment date" [ref=e459]:
+                  - spinbutton "day, Appointment date" [ref=e460]: "15"
+                  - generic [aria-hidden] [ref=e461]: /
+                  - spinbutton "month, Appointment date" [ref=e462]: "09"
+                  - generic [aria-hidden] [ref=e463]: /
+                  - spinbutton "year, Appointment date" [ref=e464]: "2026"
+                  - button "Calendar Appointment date" [ref=e465]
+                - textbox [ref=e469]: 2026-09-15
+              - combobox [ref=e473] [cursor=pointer]:
+                - generic [ref=e474]: Filter appointments by service type
+                - img "Open menu" [ref=e476]
+          - generic [ref=e479]:
+            - button "Appointments calendar" [ref=e480] [cursor=pointer]
+            - button "Create new appointment" [ref=e483] [cursor=pointer]
+          - generic [ref=e487]:
+            - article [ref=e489]:
+              - generic [ref=e490]: Scheduled appointments
+              - generic [ref=e493]:
+                - generic [ref=e494]:
+                  - text: Appointments
+                  - paragraph [ref=e495]: "1"
+                - generic [ref=e496]:
+                  - generic [ref=e497]: Checked in
+                  - generic [ref=e498]: Not arrived
+                  - paragraph [ref=e499]: "0"
+                  - paragraph [ref=e500]: "1"
+            - article [ref=e621]:
+              - generic [ref=e622]: "Highest volume service: Today"
+              - generic [ref=e626]:
+                - text: General Medicine service
+                - paragraph [ref=e627]: "1"
+            - article [ref=e503]:
+              - generic [ref=e504]: "Providers booked: Today"
+              - generic [ref=e508]:
+                - text: Providers
+                - paragraph [ref=e509]: "1"
+          - generic [ref=e512]:
+            - 'heading "Appointments for: Today" [level=2] [ref=e515]'
+            - generic [ref=e516]:
+              - region "data table toolbar" [ref=e517]:
+                - generic [aria-hidden]:
+                  - generic:
+                    - paragraph: 0 items selected
+                  - generic:
+                    - button: Change status
+                    - button: Cancel
+                - generic [ref=e518]:
+                  - search "Filter table" [ref=e519]:
+                    - generic [ref=e520]: Filter appointments
+                    - searchbox "Filter appointments" [ref=e521]
+                  - combobox [ref=e525] [cursor=pointer]:
+                    - generic [ref=e526]: Filter appointments by status
+                    - img "Open menu" [ref=e528]
+                  - button "Download" [ref=e530] [cursor=pointer]
+              - table [ref=e534]:
+                - rowgroup [ref=e535]:
+                  - row [ref=e1081]:
+                    - columnheader [ref=e1082]:
+                      - button "Expand all rows" [ref=e1083] [cursor=pointer]
+                    - columnheader "Select all rows" [ref=e541]:
+                      - generic [ref=e542]:
+                        - checkbox "Select all rows" [ref=e543]
+                        - generic [ref=e544] [cursor=pointer]: Select all rows
+                    - columnheader [ref=e546]:
+                      - button "Patient name" [ref=e547] [cursor=pointer]
+                    - columnheader [ref=e552]:
+                      - button "Identifier" [ref=e553] [cursor=pointer]
+                    - columnheader [ref=e558]:
+                      - button "Location" [ref=e559] [cursor=pointer]
+                    - columnheader [ref=e564]:
+                      - button "Service type" [ref=e565] [cursor=pointer]
+                    - columnheader [ref=e570]:
+                      - button "Appointment time" [ref=e571] [cursor=pointer]
+                    - columnheader [ref=e576]:
+                      - button "Visit start time" [ref=e577] [cursor=pointer]
+                    - columnheader [ref=e582]:
+                      - button "Status" [ref=e583] [cursor=pointer]
+                    - columnheader "Actions" [ref=e588]
+                    - columnheader [ref=e590]
+                - rowgroup [ref=e1084]:
+                  - row [ref=e1085]:
+                    - cell [ref=e1086]:
+                      - button "Expand current row" [ref=e1087] [cursor=pointer]
+                    - cell "Select row" [ref=e1090]:
+                      - generic [ref=e1091]:
+                        - checkbox "Select row" [ref=e1092]
+                        - generic [ref=e1093] [cursor=pointer]: Select row
+                    - cell [ref=e1095]:
+                      - link "Kenneth Carter" [ref=e1096] [cursor=pointer]:
+                        - /url: /openmrs/spa/patient/75c1fd96-e660-47d0-82dc-e28547949634/chart
+                    - cell "10001C6" [ref=e1097]
+                    - cell "Outpatient Clinic" [ref=e1098]
+                    - cell "General Medicine service" [ref=e1099]
+                    - cell "Today, 03:15 PM" [ref=e1100]
+                    - cell "Today, 12:40 PM" [ref=e1101]
+                    - cell "Scheduled" [ref=e1102]
+                    - cell [ref=e1103]:
+                      - button "Check In" [ref=e1106] [cursor=pointer]
+                    - cell [ref=e1107]:
+                      - generic [ref=e1109]:
+                        - button "Options" [ref=e1111] [cursor=pointer]:
+                          - img "Options" [ref=e1112]
+                        - tooltip [aria-hidden]
+            - generic [ref=e1116]:
+              - generic [ref=e1117]:
+                - generic [ref=e1118]: "Items per page:"
+                - combobox "Items per page:" [ref=e1123] [cursor=pointer]:
+                  - option "25" [selected]
+                - generic [ref=e1124]: 1–1 of 1 items
+              - generic [ref=e1125]:
+                - generic [ref=e1127]:
+                  - generic [ref=e1128]: Page of 1 pages
+                  - combobox "Page of 1 pages" [ref=e1131] [cursor=pointer]:
+                    - option "1" [selected]
+                - generic [ref=e1132]: of 1 page
+                - generic [ref=e1133]:
+                  - generic [ref=e1134]:
+                    - generic [ref=e1135]:
+                      - button "Previous page" [disabled]
+                    - tooltip [aria-hidden]
+                  - generic [ref=e1136]:
+                    - generic [ref=e1137]:
+                      - button "Next page" [disabled]
+                    - tooltip [aria-hidden]
+        - generic:
+          - complementary
+    - button "Toggle Implementer Tools" [ref=e63] [cursor=pointer]

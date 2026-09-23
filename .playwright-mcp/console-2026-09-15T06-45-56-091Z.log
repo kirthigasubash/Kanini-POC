@@ -1,0 +1,8 @@
+[  -16398ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ https://dev3.openmrs.org/openmrs/spa/0f1f3081096a380c.js:0
+[  -15225ms] [ERROR] Unknown config key '@openmrs/esm-laboratory-app.labTableColumns' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -15199ms] [INFO] [@carbon/feature-flags] `enable-v12-dynamic-floating-styles` is available but not enabled.
+Enable dynamic setting of floating styles for components like Popover, Tooltip, etc.
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/a3e04ebde81c5da1.js:0
+[  -11584ms] [INFO] [@carbon/feature-flags] `enable-focus-wrap-without-sentinels` is available but not enabled.
+Enable the new focus wrap behavior that doesn't use sentinel nodes
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/a3e04ebde81c5da1.js:0

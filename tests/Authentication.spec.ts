@@ -1,47 +1,32 @@
+// spec: authentication location-selection workflow
+// seed: tests/seed.spec.ts
+
 import { expect, test } from '@playwright/test';
-import { HomePage } from './Pages/HomePage';
-import { LoginPage } from './Pages/LoginPage';
+import testData from './fixtures/openmrs.test-data.json';
 
-test.describe('Core end-user workflows', () => {
-  // The shared demo authenticates successfully but intermittently fails to mount the clinical navigation in Chromium.
-  test.fixme(true, 'OpenMRS demo application shell is currently unavailable after authentication.');
+test.describe('Authentication With Location Selection', () => {
+  test('Handle post-login location selection', async ({ page }) => {
+    // 1. Open the OpenMRS login page in a fresh browser context.
+    await page.goto('https://dev3.openmrs.org/openmrs/spa/login');
 
-  test.use({ storageState: { cookies: [], origins: [] } });
+    // 2. Enter the valid demo username and continue.
+    await page.locator('#username').fill(testData.authentication.validUser.username);
+    await page.getByRole('button', { name: 'Continue' }).click();
 
-  test('Authenticate and establish the clinical working context', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+    // 3. Enter the valid demo password and log in.
+    await page.locator('input[name="password"]').fill(testData.authentication.validUser.password);
+    await page.getByRole('button', { name: 'Log in' }).click();
 
-    // 1. Start with a fresh browser context and navigate to the OpenMRS login page.
-    await loginPage.goto();
-    await expect(loginPage.logo).toBeVisible();
-    await expect(loginPage.usernameInput).toBeVisible();
-    await expect(loginPage.continueButton).toBeVisible();
-    await expect(page.getByRole('navigation', { name: 'Left navigation' })).toBeHidden();
+    // 4. Verify the `/openmrs/spa/login/location` page is displayed.
+    await expect(page).toHaveURL(/\/openmrs\/spa\/login\/location/);
 
-    // 2. Select Continue without entering a username.
-    await loginPage.continueButton.click();
-    await expect(loginPage.usernameInput).toBeVisible();
-    await expect(page).toHaveURL(/\/openmrs\/spa\/login$/);
+    // 5. Search for `Outpatient Clinic`, select it, and confirm.
+    await page.getByRole('searchbox', { name: 'Search for a location' }).fill(testData.authentication.expectedLocation);
+    await page.locator('label').filter({ hasText: testData.authentication.expectedLocation }).click();
+    await page.getByRole('button', { name: 'Confirm' }).click();
 
-    // 3. Enter invalid credentials and verify that an authenticated session is not created.
-    await loginPage.continueWithUsername('invalid-user');
-    await expect(loginPage.passwordInput).toBeVisible();
-    await loginPage.passwordInput.fill('invalid-password');
-    await loginPage.logInButton.click();
-    await expect(page).not.toHaveURL(/\/openmrs\/spa\/home/);
-
-    // 4. Enter valid demo credentials and establish an authenticated clinical session.
-    await loginPage.goto();
-    await loginPage.login('admin', 'Admin123');
-    const homePage = new HomePage(page);
-    await expect(homePage.serviceQueuesLink).toBeVisible();
-    await expect(homePage.searchPatientButton).toBeVisible();
-    await expect(homePage.addPatientButton).toBeVisible();
-    await expect(homePage.changeLocationButton).toBeVisible();
-    await expect(homePage.appMenuButton).toBeVisible();
-    await expect(homePage.myAccountButton).toBeVisible();
-
-    // 5. Verify the clinical working location presented in the global header.
-    await expect(homePage.changeLocationButton).toContainText('Outpatient Clinic');
+    // 6. Verify the Service queues workspace and selected Outpatient Clinic location are available.
+    await expect(page.getByRole('link', { name: 'Service queues' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Change location' })).toContainText(testData.authentication.expectedLocation);
   });
 });

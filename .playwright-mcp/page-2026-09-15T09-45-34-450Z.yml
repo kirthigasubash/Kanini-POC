@@ -1,0 +1,200 @@
+- generic [ref=e1]:
+  - navigation "Left navigation" [ref=e346]:
+    - generic [ref=e347]:
+      - link "Service queues" [ref=e350] [cursor=pointer]:
+        - /url: /openmrs/spa/home/service-queues
+      - link "Appointments" [ref=e355] [cursor=pointer]:
+        - /url: /openmrs/spa/home/appointments
+      - link "Patient lists" [ref=e360] [cursor=pointer]:
+        - /url: /openmrs/spa/home/patient-lists
+      - link "Billing" [ref=e364] [cursor=pointer]:
+        - /url: /openmrs/spa/home/billing
+      - link "Laboratory" [ref=e366] [cursor=pointer]:
+        - /url: /openmrs/spa/home/laboratory
+      - link "Wards" [ref=e369] [cursor=pointer]:
+        - /url: /openmrs/spa/home/ward
+  - generic [ref=e605]:
+    - banner "Workspace header" [ref=e606]:
+      - generic [ref=e607]: Create new appointment
+      - generic [ref=e610]:
+        - button "Close" [ref=e612] [cursor=pointer]
+        - tooltip [aria-hidden]
+    - generic [ref=e615]:
+      - generic [ref=e616]:
+        - search "Search for a patient by name or identifier number" [ref=e617]:
+          - searchbox "Search for a patient by name or identifier number" [ref=e619]: 10001C6
+          - button "Clear" [ref=e628] [cursor=pointer]
+        - button "Search" [active] [ref=e620] [cursor=pointer]
+      - generic [ref=e631]:
+        - generic [ref=e634]:
+          - heading "1 search result" [level=2] [ref=e635]
+          - banner [ref=e637]:
+            - 'button "Avatar for Kenneth Carter Kenneth Carter Male 31 yrs · 27-May-1995 · OpenMRS ID: 10001C6" [ref=e638] [cursor=pointer]':
+              - generic "Avatar for Kenneth Carter" [ref=e640]:
+                - generic "Kenneth Carter" [ref=e641]: KC
+              - generic [ref=e643]:
+                - generic [ref=e645]:
+                  - generic [ref=e646]: Kenneth Carter
+                  - generic [ref=e647]: Male
+                - generic [ref=e651]:
+                  - generic [ref=e652]: 31 yrs
+                  - generic [ref=e653]: ·
+                  - generic [ref=e654]: 27-May-1995
+                  - generic [ref=e655]: ·
+                  - generic [ref=e659]:
+                    - generic [ref=e660]: "OpenMRS ID:"
+                    - text: 10001C6
+            - button "Show more" [ref=e662] [cursor=pointer]
+        - generic [ref=e666]:
+          - paragraph [ref=e667]: Can't find who you're looking for?
+          - button "Refine search" [ref=e668] [cursor=pointer]
+  - banner "OpenMRS" [ref=e374]:
+    - link [ref=e375] [cursor=pointer]:
+      - /url: /openmrs/spa/home
+      - img "OpenMRS Logo" [ref=e377]
+    - generic [ref=e382]:
+      - button "Change location" [ref=e384] [cursor=pointer]:
+        - generic [ref=e387]: Outpatient Clinic
+      - tooltip [aria-hidden]
+    - generic [ref=e388]:
+      - generic [ref=e389]:
+        - generic [ref=e393]:
+          - button "Search patient" [ref=e395] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e399]:
+          - button "Implementer Tools" [ref=e401] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e405]:
+          - button "Add patient" [ref=e407] [cursor=pointer]
+          - tooltip [aria-hidden]
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - button "My Account" [ref=e414] [cursor=pointer]
+            - tooltip [aria-hidden]
+          - generic:
+            - generic "User menu":
+              - list "User menu options":
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "User":
+                        - paragraph [ref=e419]: Super User
+                  - generic:
+                    - listitem:
+                      - generic "Change language":
+                        - paragraph [ref=e423]: English
+                        - button "Change" [ref=e424] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic "Change password":
+                        - paragraph [ref=e428]: Password
+                        - button "Change" [ref=e429] [cursor=pointer]
+                - listitem [ref=e430]:
+                  - separator [aria-hidden] [ref=e431]
+                - generic:
+                  - generic:
+                    - listitem:
+                      - generic "Logout":
+                        - button "Logout" [ref=e432] [cursor=pointer]
+      - generic [ref=e436]:
+        - button "App Menu" [ref=e438] [cursor=pointer]
+        - tooltip [aria-hidden]
+      - generic "Notifications Panel":
+        - heading "Notifications" [level=1]
+  - generic [ref=e4]:
+    - button [ref=e57] [cursor=pointer]
+    - main [ref=e442]:
+      - generic [ref=e443]:
+        - main [ref=e447]:
+          - generic [ref=e448]:
+            - generic [ref=e452]:
+              - paragraph [ref=e453]: Clinic
+              - paragraph [ref=e454]: Appointments
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - group "Appointment date" [ref=e459]:
+                  - spinbutton "day, Appointment date" [ref=e460]: "15"
+                  - generic [aria-hidden] [ref=e461]: /
+                  - spinbutton "month, Appointment date" [ref=e462]: "09"
+                  - generic [aria-hidden] [ref=e463]: /
+                  - spinbutton "year, Appointment date" [ref=e464]: "2026"
+                  - button "Calendar Appointment date" [ref=e465]
+                - textbox [ref=e469]: 2026-09-15
+              - combobox [ref=e473] [cursor=pointer]:
+                - generic [ref=e474]: Filter appointments by service type
+                - img "Open menu" [ref=e476]
+          - generic [ref=e479]:
+            - button "Appointments calendar" [ref=e480] [cursor=pointer]
+            - button "Create new appointment" [ref=e483] [cursor=pointer]
+          - generic [ref=e487]:
+            - article [ref=e489]:
+              - generic [ref=e490]: Scheduled appointments
+              - generic [ref=e493]:
+                - generic [ref=e494]:
+                  - text: Appointments
+                  - paragraph [ref=e495]: "0"
+                - generic [ref=e496]:
+                  - generic [ref=e497]: Checked in
+                  - generic [ref=e498]: Not arrived
+                  - paragraph [ref=e499]: "0"
+                  - paragraph [ref=e500]: "0"
+            - article [ref=e621]:
+              - generic [ref=e622]: "Highest volume service: Today"
+              - generic [ref=e626]:
+                - text: Service name
+                - paragraph [ref=e627]: "--"
+            - article [ref=e503]:
+              - generic [ref=e504]: "Providers booked: Today"
+              - generic [ref=e508]:
+                - text: Providers
+                - paragraph [ref=e509]: "0"
+          - generic [ref=e512]:
+            - 'heading "Appointments for: Today" [level=2] [ref=e515]'
+            - generic [ref=e516]:
+              - region "data table toolbar" [ref=e517]:
+                - generic [aria-hidden]:
+                  - generic:
+                    - paragraph: 0 items selected
+                  - generic:
+                    - button: Change status
+                    - button: Cancel
+                - generic [ref=e518]:
+                  - search "Filter table" [ref=e519]:
+                    - generic [ref=e520]: Filter appointments
+                    - searchbox "Filter appointments" [ref=e521]
+                  - combobox [ref=e525] [cursor=pointer]:
+                    - generic [ref=e526]: Filter appointments by status
+                    - img "Open menu" [ref=e528]
+                  - button "Download" [ref=e530] [cursor=pointer]
+              - table [ref=e534]:
+                - rowgroup [ref=e535]:
+                  - row [ref=e536]:
+                    - columnheader [ref=e537]:
+                      - button "Collapse all rows" [expanded] [ref=e538] [cursor=pointer]
+                    - columnheader "Select all rows" [ref=e541]:
+                      - generic [ref=e542]:
+                        - checkbox "Select all rows" [ref=e543]
+                        - generic [ref=e544] [cursor=pointer]: Select all rows
+                    - columnheader [ref=e546]:
+                      - button "Patient name" [ref=e547] [cursor=pointer]
+                    - columnheader [ref=e552]:
+                      - button "Identifier" [ref=e553] [cursor=pointer]
+                    - columnheader [ref=e558]:
+                      - button "Location" [ref=e559] [cursor=pointer]
+                    - columnheader [ref=e564]:
+                      - button "Service type" [ref=e565] [cursor=pointer]
+                    - columnheader [ref=e570]:
+                      - button "Appointment time" [ref=e571] [cursor=pointer]
+                    - columnheader [ref=e576]:
+                      - button "Visit start time" [ref=e577] [cursor=pointer]
+                    - columnheader [ref=e582]:
+                      - button "Status" [ref=e583] [cursor=pointer]
+                    - columnheader "Actions" [ref=e588]
+                    - columnheader
+                - rowgroup
+            - generic [ref=e594]:
+              - paragraph [ref=e595]: No appointments to display
+              - paragraph [ref=e596]: Check the filters above
+        - generic:
+          - complementary
+    - button "Toggle Implementer Tools" [ref=e63] [cursor=pointer]

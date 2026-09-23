@@ -2,16 +2,14 @@ import { test, expect } from './fixtures/openmrs.fixture';
 import { CreatePatientPage } from './Pages/CreatePatient';
 import { HomePage } from './Pages/HomePage';
 import { PatientSearchPage } from './Pages/PatientSearchPage';
+import testData from './fixtures/openmrs.test-data.json';
 
-test.describe('Core end-user workflows', () => {
-  // The shared demo intermittently rejects valid admin sessions before the scenario can start.
-  test.fixme(true, 'OpenMRS demo authentication is currently unavailable for authenticated workflows.');
-
+test.describe('@Core end-user workflows', () => {
   test('Register a new patient with mandatory demographics and optional contact information', async ({ authenticatedPage }) => {
     const homePage = new HomePage(authenticatedPage);
     const uniqueSuffix = Date.now().toString();
-    const firstName = `PW${uniqueSuffix}`;
-    const familyName = 'Registration';
+    const firstName = `${testData.patients.registration.firstNamePrefix}${uniqueSuffix}`;
+    const familyName = testData.patients.registration.familyName;
 
     // 1. Start at the clinical home page and open patient registration.
     await homePage.openPatientRegistration();
@@ -25,21 +23,28 @@ test.describe('Core end-user workflows', () => {
     await createPatientPage.register();
     await expect(authenticatedPage).toHaveURL(/patient-registration/);
     await expect(createPatientPage.firstNameInput).toBeVisible();
+    const validationSnackbar = authenticatedPage.getByRole('alertdialog', { name: 'The following fields have errors:' });
+    await expect(validationSnackbar).toBeVisible();
+    await validationSnackbar.getByRole('button', { name: 'Close snackbar' }).click();
+    await expect(validationSnackbar).toBeHidden();
 
     // 3. Enter valid mandatory demographics and optional contact details.
     await createPatientPage.enterDemographics({
       firstName,
       familyName,
-      sex: 'Other',
-      birthDate: '01/01/1990',
-      address: 'Playwright Test Address',
-      phoneNumber: '5550100',
+      sex: testData.patients.registration.sex,
+      birthDate: testData.patients.registration.birthDate,
+      address: testData.patients.registration.address,
+      phoneNumber: testData.patients.registration.phoneNumber,
     });
     await expect(authenticatedPage.getByText('Auto-generated', { exact: true })).toBeVisible();
 
     // 4. Register the patient once and verify the resulting patient record.
     await createPatientPage.register();
-    await expect(authenticatedPage.getByText(`${firstName} ${familyName}`, { exact: true })).toBeVisible();
+    await expect(authenticatedPage).toHaveURL(/\/patient\/.*\/chart/, { timeout: 20_000 });
+    const registrationSnackbar = authenticatedPage.getByRole('alertdialog', { name: 'New Patient Created' });
+    await expect(registrationSnackbar).toBeVisible();
+    await registrationSnackbar.getByRole('button', { name: 'Close snackbar' }).click();
 
     // 5. Find the newly registered patient through global search and reopen their chart.
     await homePage.openPatientSearch();

@@ -1,9 +1,7 @@
 import { test as base, expect, type Page } from '@playwright/test';
 import { HomePage } from '../Pages/HomePage';
 import { LoginPage } from '../Pages/LoginPage';
-
-const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = 'Admin123';
+import testData from './openmrs.test-data.json';
 
 type OpenMRSFixtures = {
   authenticatedPage: Page;
@@ -21,7 +19,8 @@ export const test = base.extend<OpenMRSFixtures>({
 
       try {
         await loginPage.goto();
-        await loginPage.login(ADMIN_USERNAME, ADMIN_PASSWORD);
+        await loginPage.login(testData.authentication.validUser.username, testData.authentication.validUser.password);
+        await loginPage.selectLocation(testData.authentication.expectedLocation);
         await expect(new HomePage(loginBrowserPage).serviceQueuesLink).toBeVisible({ timeout: 20_000 });
         await loginContext.storageState({ path: statePath });
         authenticatedStateSaved = true;

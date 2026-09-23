@@ -1,0 +1,14 @@
+[  -14894ms] [INFO] 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙 @ https://dev3.openmrs.org/openmrs/spa/0f1f3081096a380c.js:0
+[  -13866ms] [INFO] [@carbon/feature-flags] `enable-v12-dynamic-floating-styles` is available but not enabled.
+Enable dynamic setting of floating styles for components like Popover, Tooltip, etc.
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/a3e04ebde81c5da1.js:0
+[  -13809ms] [ERROR] Unknown config key '@openmrs/esm-laboratory-app.labTableColumns' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -10646ms] [ERROR] Unknown config key '@openmrs/esm-patient-chart-app.restrictByVisitLocationTag' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[  -10646ms] [ERROR] Unknown config key '@openmrs/esm-patient-chart-app.showUpcomingAppointments' provided. Ignoring. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:12
+[   -9742ms] [ERROR] Attempted to override the existing store order-basket. Make sure that stores are only created once. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:42
+[   -9735ms] [ERROR] Attempted to override the existing store patient-chart-global-store. Make sure that stores are only created once. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:42
+[   -9313ms] [WARNING] An extension slot with the name 'patient-banner-tags-slot' already exists. Refusing to register the same slot name twice (in "registerExtensionSlot"). The existing one is from module @openmrs/esm-patient-search-app. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:14
+[   -9313ms] [WARNING] An extension slot with the name 'patient-banner-bottom-slot' already exists. Refusing to register the same slot name twice (in "registerExtensionSlot"). The existing one is from module @openmrs/esm-patient-search-app. @ https://dev3.openmrs.org/openmrs/spa/73b411596785830d.js:14
+[   -7815ms] [INFO] [@carbon/feature-flags] `enable-focus-wrap-without-sentinels` is available but not enabled.
+Enable the new focus wrap behavior that doesn't use sentinel nodes
+This becomes the default behavior in v12. Enable it to migrate early, or enable `enable-v12-release` to turn on every v12 flag at once. @ https://dev3.openmrs.org/openmrs/spa/a3e04ebde81c5da1.js:0
