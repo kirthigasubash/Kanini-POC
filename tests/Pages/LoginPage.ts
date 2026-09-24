@@ -31,7 +31,12 @@ export class LoginPage {
   }
 
   async selectLocation(location: string): Promise<void> {
-    await this.page.getByRole('searchbox', { name: 'Search for a location' }).fill(location);
+    const locationSearch = this.page.getByRole('searchbox', { name: 'Search for a location' });
+    if (!(await locationSearch.isVisible().catch(() => false))) {
+      return;
+    }
+
+    await locationSearch.fill(location);
     await this.page.locator('label').filter({ hasText: location }).click();
     await this.page.getByRole('button', { name: 'Confirm' }).click();
   }

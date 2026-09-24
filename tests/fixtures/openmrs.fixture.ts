@@ -20,14 +20,22 @@ export const test = base.extend<OpenMRSFixtures>({
       try {
         await loginPage.goto();
         await loginPage.login(testData.authentication.validUser.username, testData.authentication.validUser.password);
-        await loginPage.selectLocation(testData.authentication.expectedLocation);
-        await expect(new HomePage(loginBrowserPage).serviceQueuesLink).toBeVisible({ timeout: 20_000 });
+
+        await expect(loginBrowserPage).toHaveURL(/\/openmrs\/spa\/(login\/location|home(?:\/.*)?)$/, {
+          timeout: 20_000,
+        });
+
+        if (loginBrowserPage.url().includes('/openmrs/spa/login/location')) {
+          await loginPage.selectLocation(testData.authentication.expectedLocation);
+        }
+
+        await expect(loginBrowserPage).toHaveURL(/\/openmrs\/spa\/home(?:\/.*)?$/, { timeout: 20_000 });
         await loginContext.storageState({ path: statePath });
         authenticatedStateSaved = true;
       } catch {
         // The shared demo intermittently rejects a valid session; retry in a clean context.
       } finally {
-        await loginContext.close();
+        await loginContext.close().catch(() => undefined);
       }
     }
 
@@ -37,9 +45,9 @@ export const test = base.extend<OpenMRSFixtures>({
 
     const authenticatedContext = await browser.newContext({ storageState: statePath });
     const authenticatedPage = await authenticatedContext.newPage();
-    await authenticatedPage.goto('https://dev3.openmrs.org/openmrs/spa/login');
+    await authenticatedPage.goto('/openmrs/spa/home/service-queues');
     await use(authenticatedPage);
-    await authenticatedContext.close();
+    await authenticatedContext.close().catch(() => undefined);
   },
 });
 
