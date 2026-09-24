@@ -37,7 +37,7 @@ export const test = base.extend<OpenMRSFixtures>({
 
     const authenticatedContext = await browser.newContext({ storageState: statePath });
     const authenticatedPage = await authenticatedContext.newPage();
-    await authenticatedPage.goto('/openmrs/spa/home/service-queues');
+    await authenticatedPage.goto('https://dev3.openmrs.org/openmrs/spa/login');
     await use(authenticatedPage);
     await authenticatedContext.close();
   },
