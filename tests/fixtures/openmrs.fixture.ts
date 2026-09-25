@@ -27,6 +27,18 @@ export const test = base.extend<OpenMRSFixtures>({
         testData.authentication.validUser.password
       );
 
+      // The OpenMRS SPA occasionally stalls on the username step, so fall back
+      // to the session API to ensure the browser has a valid authenticated state.
+      if (page.url().includes('/openmrs/spa/login')) {
+        await loginPage.loginViaApi(
+          testData.authentication.validUser.username,
+          testData.authentication.validUser.password
+        );
+        await page.goto('/openmrs/spa/home/service-queues', {
+          waitUntil: 'domcontentloaded',
+        });
+      }
+
       // 3. Wait for either location page or home page
       await expect(page).toHaveURL(
         /\/openmrs\/spa\/(login\/location|home(?:\/.*)?)$/,

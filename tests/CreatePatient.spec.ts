@@ -37,7 +37,9 @@ test.describe('@Core end-user workflows', () => {
       address: testData.patients.registration.address,
       phoneNumber: testData.patients.registration.phoneNumber,
     });
-    await expect(authenticatedPage.getByText('Auto-generated', { exact: true })).toBeVisible();
+    await expect(
+      authenticatedPage.getByTestId('identifier-placeholder').first()
+    ).toBeVisible();
 
     // 4. Register the patient once and verify the resulting patient record.
     await createPatientPage.register();

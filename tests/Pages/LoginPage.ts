@@ -30,6 +30,69 @@ export class LoginPage {
     await this.logInButton.click();
   }
 
+  async loginViaApi(username: string, password: string): Promise<void> {
+    const response = await this.page.request.post(
+      'https://dev3.openmrs.org/openmrs/ws/rest/v1/session',
+      {
+        data: {
+          username,
+          password,
+        },
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        failOnStatusCode: false,
+      }
+    );
+
+    if (!response.ok()) {
+      const responseBody = await response.text();
+      throw new Error(
+        `OpenMRS session login failed with status ${response.status()}: ${responseBody}`
+      );
+    }
+
+    const setCookieHeader = response.headers()['set-cookie'];
+    const rawCookieValues = Array.isArray(setCookieHeader)
+      ? setCookieHeader
+      : setCookieHeader
+        ? [setCookieHeader]
+        : [];
+
+    const cookies = rawCookieValues.flatMap((rawCookie) => {
+      const [nameValuePair, ...attributes] = rawCookie.split(';');
+      const separatorIndex = nameValuePair.indexOf('=');
+
+      if (separatorIndex === -1) {
+        return [];
+      }
+
+      const name = nameValuePair.slice(0, separatorIndex).trim();
+      const value = nameValuePair.slice(separatorIndex + 1).trim();
+
+      return [
+        {
+          name,
+          value,
+          domain: 'dev3.openmrs.org',
+          path: '/',
+          httpOnly: attributes.some((attribute) =>
+            attribute.toLowerCase().includes('httponly')
+          ),
+          secure: attributes.some((attribute) =>
+            attribute.toLowerCase().includes('secure')
+          ),
+          url: 'https://dev3.openmrs.org',
+        },
+      ];
+    });
+
+    if (cookies.length > 0) {
+      await this.page.context().addCookies(cookies);
+    }
+  }
+
   async selectLocation(location: string): Promise<void> {
     const locationSearch = this.page.getByRole('searchbox', { name: 'Search for a location' });
     if (!(await locationSearch.isVisible().catch(() => false))) {
